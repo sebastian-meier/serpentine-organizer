@@ -55,7 +55,7 @@ const colors = [
   "#1A63C0"
 ];
 
-const state = 0;
+let state = 0;
 
 d3.json("./data/clean.geojson")
   .then((geojson) => {
