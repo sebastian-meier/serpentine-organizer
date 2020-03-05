@@ -55,7 +55,7 @@ const colors = [
   "#1A63C0"
 ];
 
-d3.json("../data/clean.geojson")
+d3.json("./data/clean.geojson")
   .then((geojson) => {
 
     const sum = geojson.features.reduce((a,b) => a + b.properties.length, 0);
