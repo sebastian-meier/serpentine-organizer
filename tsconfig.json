@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+      "target": "es5",
+      "module": "commonjs",
+      "sourceMap": true,
+      "outDir": "./dst",
+      "lib": [ "es2015", "dom", "es2017"],
+      "typeRoots": ["node_modules/@types", "node_modules/web-ext-types"],
+  },
+  "include": ["src"],
+  "exclude": [
+      "node_modules"
+  ]
+}

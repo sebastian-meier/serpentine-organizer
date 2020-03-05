@@ -1,0 +1,39 @@
+{
+  "name": "streets2lines",
+  "version": "1.0.0",
+  "description": "convert geojson streets to lines",
+  "main": "index.js",
+  "scripts": {
+    "lint": "tslint -p tslint.json --force",
+    "build": "tsc",
+    "typescript": "npm run lint && npm run build",
+    "watch": "nodemon "
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "node_modules/*",
+      "dst/*"
+    ],
+    "watch": [
+      "src"
+    ],
+    "exec": "npm run typescript",
+    "ext": "ts"
+  },
+  "author": "sebastian-meier",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/d3": "^5.7.2",
+    "@types/node": "^13.7.7",
+    "nodemon": "^2.0.2",
+    "tslint": "^6.0.0",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "@turf/flatten": "^5.1.5",
+    "@turf/length": "^6.0.2",
+    "@turf/simplify": "^5.1.5",
+    "d3": "^5.15.0",
+    "fs": "0.0.1-security"
+  }
+}
