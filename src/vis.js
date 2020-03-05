@@ -104,10 +104,12 @@ d3.json("./data/clean.geojson")
         }
         feature.properties["path"].push(p2);
 
-        if (feature.properties["path"].length > feature.geometry.coordinates.length) {
-          while (feature.properties["path"].length > feature.geometry.coordinates.length) {
-            feature.geometry.coordinates.unshift(feature.geometry.coordinates[0]);
-          }
+        while (feature.properties["path"].length > feature.geometry.coordinates.length) {
+          feature.geometry.coordinates.unshift(feature.geometry.coordinates[0]);
+        }
+
+        while (feature.geometry.coordinates.length > feature.properties["path"].length) {
+          feature.properties["path"].unshift(feature.properties["path"][0]);
         }
 
       } else {
