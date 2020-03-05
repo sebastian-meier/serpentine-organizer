@@ -127,8 +127,8 @@ d3.json("./data/clean.geojson")
       .text("animate")
       .on("click", () => {
         map.transition()
-          .delay((d,i) => i * 0.5)
-          .duration(1000)
+          .delay((d,i) => i * 0.3)
+          .duration(600)
           .attr("d", (d) => {
             let p = `M${d.properties.path[0].x},${d.properties.path[0].y}`;
             for (let i = 1; i < d.properties.path.length; i += 1) {
