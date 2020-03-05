@@ -14,7 +14,8 @@ reorganize geojson lines into rectangle filling serpentines
 - http://genderatlas.at/articles/strassennamen.html
 
 ## TODO
-If a start- or end-point ends up on an gap, there is still a bug that needs to be handled, so that it looks nicer.
+- If a start- or end-point ends up on an gap, there is still a bug that needs to be handled, so that it looks nicer.
+- Fix Reverse Animation
 
 ## License
 
