@@ -55,6 +55,8 @@ const colors = [
   "#1A63C0"
 ];
 
+const state = 0;
+
 d3.json("./data/clean.geojson")
   .then((geojson) => {
 
@@ -126,15 +128,24 @@ d3.json("./data/clean.geojson")
     d3.select("body").append("a")
       .text("animate")
       .on("click", () => {
-        map.transition()
-          .delay((d,i) => i * 0.3)
-          .duration(600)
-          .attr("d", (d) => {
-            let p = `M${d.properties.path[0].x},${d.properties.path[0].y}`;
-            for (let i = 1; i < d.properties.path.length; i += 1) {
-              p += `L${d.properties.path[i].x},${d.properties.path[i].y}`;
-            }
-            return p;
-          });
+        if ( state === 0) {
+          map.transition()
+            .delay((d,i) => i * 0.3)
+            .duration(600)
+            .attr("d", (d) => {
+              let p = `M${d.properties.path[0].x},${d.properties.path[0].y}`;
+              for (let i = 1; i < d.properties.path.length; i += 1) {
+                p += `L${d.properties.path[i].x},${d.properties.path[i].y}`;
+              }
+              return p;
+            });
+          state = 1;
+        } else {
+          map.transition()
+            .delay((d,i) => i * 0.3)
+            .duration(600)
+            .attr("d", path);
+          state = 0;
+        }
       });
   });
