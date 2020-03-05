@@ -15,3 +15,7 @@ http://genderatlas.at/articles/strassennamen.html
 
 ## TODO
 If a start- or end-point ends up on an gap, there is still a bug that needs to be handled, so that it looks nicer.
+
+## License
+
+Code is licensed under MIT, the data itself please check the data source repo.
